@@ -1,0 +1,128 @@
+.container2{
+    margin: 6rem 2rem;
+    position: relative;
+    padding: 0 2rem; 
+    
+}
+
+.container2 h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    /* margin-bottom: 3.5rem; */
+}
+
+/* .title{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 1.75px;
+    text-transform: uppercase;
+} */
+
+.about-content{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+
+.about-Item:hover {
+    background-color: #443581; /* Light blue background */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow for emphasis */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+.about-img{
+    width: 35%;
+}
+
+.about-Items{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.about-Item {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column; /* This makes the items display line by line (column) */
+    align-items: flex-start; /* Aligns the items to the start of the column */
+    border-radius: 20px;
+    list-style: none;
+    gap: 1rem;
+    padding: 25px;
+    background: linear-gradient(90deg, #a892fe 0%, #8064e8 100%);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: 0.4s;
+}
+
+@media(max-width: 769px)
+{
+    .container2{
+        margin: 37rem 0.5rem 0.5rem 0.5rem;
+        justify-content: center;
+       
+    }
+
+    .about-img{
+        display: none;
+    } 
+
+    .about-Item {
+        background-color: #443581; /* Light blue background */
+        box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.2); /* Adds a shadow for emphasis */
+        border-radius: 8px; /* Optional: Adds rounded corners */
+        
+        
+    }  
+    .about-Items{
+    
+        padding-left: 2px;
+
+    }
+
+
+}
+
+/* .about-Item:hover{
+    background-size: 100% 100%;
+}
+
+.about-Item h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.about-img p{
+    font-size: 1.2rem;
+    color: #fff;
+} */
+
+/* @media (max-width: 768px){
+   
+    .container2{
+        background-color: transparent;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .about-img{
+        display: none;
+    }
+
+    .about-Items{
+        margin-top: 20px;
+    }
+
+    .about-Item{
+        padding-left: 0;
+        padding-right: 0;
+    } */
+    
+
+

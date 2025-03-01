@@ -1,0 +1,18 @@
+.experience-container{
+    max-width: 1300px; /* Adjust the max-width as needed */
+    margin: 5rem auto; /* Centers the container */
+    padding: 0 2rem; /* Adds spacing on the left and right */
+    position: relative;
+}
+
+.experience-container h5{
+    font-size:1.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+@media (max-width:600px){
+    .experience-content{
+        padding:0;
+    }
+}
