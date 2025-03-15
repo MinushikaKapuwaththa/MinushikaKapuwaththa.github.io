@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import img2 from '../../assets/hero/mypic3.PNG';
 import './Hero.css';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
 
 function Hero() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  useEffect(() => {
+    // Set loaded state after a small delay to ensure animations trigger properly
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <section className='hero-container'>
+    <section className={`hero-container ${isLoaded ? 'loaded' : ''}`}>
       <div className='hero-content'>
-        <h1>Hi! I'm </h1>
+        <h1>Hello I'm </h1>
         <h1><span> Minushika Kapuwaththa</span></h1>
-        {/* <h2>I'm Quality Assurance Engineer</h2> */}
         <p>
           Final-year undergraduate at the University of Moratuwa, pursuing a degree in 
           Information Technology and Management. Passionate about exploring new technologies, 
@@ -27,16 +36,17 @@ function Hero() {
             <a href="https://github.com/MinushikaKapuwaththa" aria-label="GitHub">
               <GitHubIcon />
             </a>
-            {/* <a href="https://web.facebook.com/Minushika.kapuwaththa" aria-label="Facebook">
-              <FacebookIcon />
-            </a> */}
           </div>
         </div>
       </div>
       <div className='hero-img'>
         <div className='img-box'>
           <div className='img-item'>
-            <img src={img2} alt='Minushika Kapuwaththa' />
+            <img 
+              src={img2} 
+              alt='Minushika Kapuwaththa' 
+              onLoad={() => setIsLoaded(true)}
+            />
           </div>
         </div>
       </div>
