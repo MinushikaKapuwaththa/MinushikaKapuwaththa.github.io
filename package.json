@@ -18,19 +18,11 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.2.0",
-<<<<<<< HEAD
     "react-scripts": "^5.0.1",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4",
     "webpack": "^5.98.0"
-=======
-    "react-scripts": "^3.0.1",
-    "react-slick": "^0.30.3",
-    "slick-carousel": "^1.8.1",
-    "web-vitals": "^2.1.4"
-    
->>>>>>> c7e9244eab4945fd84da139d3ce88c55e3c35a43
   },
   "scripts": {
     "predeploy": "npm run build",
