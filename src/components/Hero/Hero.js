@@ -1,30 +1,29 @@
 import React from 'react'
-import img2 from '../../assets/img2.png'
+import img2 from '../../assets/hero/my pic 3.jpg'
 import './Hero.css'
+
 
 function Hero() {
   return (
-   <section className='hero-container'>
-    <div className='hero-content'>
-        <h1>Hi! I'm Minushika Kapuwaththa </h1>
-        <p>I am a final-year undergraduate at the University of Moratuwa, pursuing a degree in Information Technology and Management. Passionate about exploring new technologies, I approach tasks with maturity and responsibility, applying my knowledge through self-study and hard work to continuously grow in the field
+    <section className="home">
+        <div className='home-info'>
+            <h1>Hi I'm Minushika kapuwaththa</h1>
+            <h2>I'm Quality Assurance Engineer</h2>
+            <p>I am a final-year undergraduate at the University of Moratuwa, pursuing a degree in Information Technology and Management. Passionate about exploring new technologies, I approach tasks with maturity and responsibility, applying my knowledge through self-study and hard work to continuously grow in the field</p>
 
-        </p>
-
-        {/* <button className='conbtn'>Resume</button> */}
-        
-        
-    </div>
-
-    <div className='hero-img'>
-        <div>
-            <div className='tech-icon'>
-                <img src={ img2} alt="Profile"/>
+            <div className='btn-sci'>
+                <a href='#'className='btn'>Download CV</a>
+                <div className='sci'>
+                    <a href='#'></a>
+                    <a href='#'></a>
+                    <a href='#'></a>
+                    <a href='#'></a>
             </div>
-        </div>
 
-    </div>
-   </section>
+        </div>
+        </div>
+        </section>
+  
   )
 }
 
