@@ -42,11 +42,10 @@
     
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 10px;
 }
 
 .about-Item {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column; /* This makes the items display line by line (column) */
     align-items: flex-start; /* Aligns the items to the start of the column */
@@ -63,7 +62,7 @@
 @media(max-width: 769px)
 {
     .container2{
-        margin: 37rem 0.5rem 0.5rem 0.5rem;
+        margin: 3.7rem 0.5rem 0.5rem 0.5rem;
         justify-content: center;
        
     }
@@ -80,11 +79,14 @@
         
     }  
     .about-Items{
-    
+        gap: 20px;
         padding-left: 2px;
 
     }
 
+    .title{
+        margin-bottom: 20px;
+    }
 
 }
 
