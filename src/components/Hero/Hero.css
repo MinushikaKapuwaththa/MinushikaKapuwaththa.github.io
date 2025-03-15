@@ -1,11 +1,12 @@
 .hero-container {
     display: flex;
     align-items: center; /* Vertically centers the content */
+    gap: 5rem; /* Optional: Adds space between the image and the content */
+    padding: 20% 30% 15% 0; /* Optional: Adds padding to the container */
     
-    position: relative;
     height: 100vh; /* Ensure it takes up the full viewport height */
     width: 100%; /* Optional: Ensure it takes up the full width */
-    padding: 0 2rem; 
+    color: #fff;
 }
 
 .hero-container::after,.hero-container::before{
@@ -13,86 +14,156 @@
     width: 28.125rem;
     height: 28.125rem;
     border-radius: 28.125rem;
-    background: #7c66e3;
+    background: #231172;
     position: absolute;
     z-index: -1;
     filter:blur(225px);
 }
 
-.hero-container::after{
-    top: -rem;
-    left:-5rem;
-}
 
 .hero-container::before{
     bottom: 2rem;
     right: 0rem;
 }
 
-.hero-content{
-    flex: 1;
-    margin-top:5rem ;
-
-}
 
 .hero-content h1{
-    font-size: 3.8rem;
-    font-weight: 600;
-    line-height: 5rem;
-    margin-bottom: 1rem;
+    font-size: 55px;
+    
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
+.hero-content h1 span{
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #fff; /* Simulates typing cursor */
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+}
+
+.hero-content h2{
+    font-size: 20px;
+    margin-top: 10px;
+   
 }
 
 .hero-content p {
-    width: 80%;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 2rem;
+    
+    font-size: 18px;
+    line-height: 1.8;
+    margin-top: 10px;
+    margin-right: 10px;
     
 }
 
-.hero-img{
-    flex:1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:2rem;
-    margin-top:5rem;
-    
-    
-}
-
-.hero-img > div {
-    
-    display: flex;
-    align-items: flex-end;
-    gap:3rem;
-    
-}
-
-.hero-img > div > img{
-    width:100rem;
-    transition:all 0.3s ease;
-
-}
-
-.tech-icon{
-    width:5rem;
-    height: 5rem;
+.hero-content .btn-sci{
+    margin-top: 20px;
     display: flex;
     align-items: center;
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    background: #7c66e3;
+    border: 2px solid #7c66e3;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #6852ba;
+    transition: -5s;
+   
+}
+
+.btn:hover{
+    background: #3a2a72;
+    color: #fff;
+    box-shadow: none;
+}
+
+.hero-content .btn-sci .social-icons{
+    margin-left: 20px;}
+
+.hero-content .btn-sci .social-icons a{
+    display: inline-block;
+    padding: 8px;
+    border: 2px solid #7c66e3;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #7c66e3;
+    margin: 0 8px;
+    transition: -5s;
+}    
+
+.hero-content .btn-sci .social-icons a:hover{
+    background: #7c66e3;
+    color: #fff;
+    box-shadow: 0 0 10px #6852ba;
+}
+
+.hero-img .img-box{
+    position: relative;
+    width: 29vw;
+    height: 29vw;
+    
+    border-radius: 60%;
+    padding: 2px;
+    display: flex;
     justify-content: center;
-    text-align: center;
-    border-radius: 0.65rem;
-    border:1.5px solid #6852ba;
-    background-size: cover; /* or 'contain' based on preference */
-    background-position: center;
-    width: 150%; /* Adjust this */
-    height: 100%; /* Increase height */
+    align-items: center;
+    overflow: hidden;
 }
 
-.hero-img > div > img:hover,.tech-icon img:hover{
-    transform: translateY(-0.5rem);
+.hero-img .img-box::before,
+.hero-img .img-box::after{
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(#7c66e3 0%, #7c66e3 50%, #7c66e3 50%, #7c66e3 100%);
+    
+    
+    
+    
 }
+
+
+.hero-img .img-box .img-item{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background:#070120;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-img .img-box .img-item img{
+
+   display: block;
+    width: 80%;
+    object-fit: cover;
+    
+    
+}
+
+
+
+
 
 @media(max-width: 769px){
 
@@ -127,11 +198,6 @@
 
 }
 
-.hero-img img {
-    max-width: 400px; /* Adjust this value to control the size */
-    height: auto;     /* This ensures the aspect ratio is maintained */
-    /* border-radius: ; Optional: This makes the image circular */
-}
 
 .downbtn{
     margin-top: 2rem;
