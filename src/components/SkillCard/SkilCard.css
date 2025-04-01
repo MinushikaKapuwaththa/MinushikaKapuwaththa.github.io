@@ -51,4 +51,8 @@
     .skills-card span {
         font-size: 0.9rem; /* Even smaller font size for very small screens */
     }
+    .skill-icon {
+        width: 3rem;
+        height: 3rem;
+    }
 }

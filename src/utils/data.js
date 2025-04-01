@@ -1,20 +1,22 @@
 export const SKILLS = [
     {
-        title: "Frontend",
+        title: "Web Development",
         icon: require("../assets/skills/fontend.jpg"), // Correct way to load image
         skills:[
             {skill:"HTML",rercentage:"80%"},
             {skill:"Css",rercentage:"80%"},
             {skill:"JavaScript",rercentage:"80%"},
-            {skill:"React.js",rercentage:"80%"},
+            {skill:"React",rercentage:"80%"},
+            {skill:"Spring MVC",rercentage:"80%"},
+            
         ], 
     },
     {
-        title: "Backend",
+        title: "Test Automation",
         icon: require("../assets/skills/back.jpg"), // Correct way to load image
         skills:[
-            {skill:"Node",rercentage:"80%"},
-            {skill:"Spring MVC",rercentage:"80%"},
+            {skill:"Selenium",rercentage:"80%"},
+            {skill:"Cucumber",rercentage:"80%"},
             
         ],
     },
@@ -22,20 +24,23 @@ export const SKILLS = [
         title: "Tools",
         icon: require("../assets/skills/1321665.png"), // Correct way to load image
         skills:[
-            {skill:"GITHub",rercentage:"80%"},
+            {skill:"Github",rercentage:"80%"},
             {skill:"Visual Studio Code",rercentage:"80%"},
-            {skill:"Eclips",rercentage:"80%"},
-            {skill:"Interllij",rercentage:"80%"},
+            {skill:"Eclipse",rercentage:"80%"},
+            {skill:"IntelliJ IDEA",rercentage:"80%"},
+            {skill:"JMeter",rercentage:"80%"},
+            {skill:"Postman",rercentage:"80%"},
+            {skill:"Swagger",rercentage:"80%"},
         ],
     },
     {
-        title: "Soft Skills",
+        title: "Database",
         icon: require("../assets/skills/soft.jpg"), // Correct way to load image
         skills:[
-            {skill:"Promblem-solving",rercentage:"80%"},
-            {skill:"Collboration",rercentage:"80%"},
-            {skill:"JavaScript",rercentage:"80%"},
-            {skill:"React.js",rercentage:"80%"},
+            {skill:"MSSQL",rercentage:"80%"},
+            {skill:" MySQL",rercentage:"80%"},
+            {skill:"Oracle",rercentage:"80%"},
+            
         ],
     }
 
