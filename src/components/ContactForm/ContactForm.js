@@ -8,7 +8,18 @@ const ContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_45lexaq', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
+    // Create a combined name field from firstname and lastname
+    const formData = new FormData(form.current);
+    const firstName = formData.get('firstname');
+    const lastName = formData.get('lastname');
+    
+    // Add a hidden field for the combined name
+    formData.append('name', `${firstName} ${lastName}`);
+    
+    // Convert FormData to object that emailjs can use
+    const formValues = Object.fromEntries(formData.entries());
+    
+    emailjs.send('service_y15cz6j', 'template_wx9i86b', formValues, 'X21fh0XSzL9pEp6h9')
       .then((result) => {
         console.log(result.text);
         alert('Message sent successfully!');
