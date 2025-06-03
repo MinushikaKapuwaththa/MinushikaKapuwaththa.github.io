@@ -126,6 +126,13 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   size="lg"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(
+                      'https://drive.google.com/file/d/1rf2usOZQeu-_qM9nbaflzxD44nbWlhFM/view?usp=sharing',
+                      '_blank'
+                    );
+                  }}
                   className="group text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
                 >
                   <Download className="mr-2 h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover:scale-110" />
