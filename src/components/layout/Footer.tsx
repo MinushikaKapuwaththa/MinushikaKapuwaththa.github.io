@@ -13,7 +13,6 @@ const Footer: React.FC = () => {
               ©{currentYear} Minushika Kapuwaththa. All rights reserved.
             </p>
           </div>
-
           <div className="flex space-x-4">
             <a 
               href="https://github.com/MinushikaKapuwaththa" 
