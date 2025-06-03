@@ -14,16 +14,70 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      
+      // Get all sections
+      const sections = navItems.map(item => item.href.substring(1)); // Remove '#' from href
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+      
+      // Find the current section
+      let currentSection = '';
+      sections.forEach(sectionId => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            currentSection = sectionId;
+          }
+        }
+      });
+      
+      // Handle hero section (top of page)
+      if (window.scrollY < 100) {
+        currentSection = 'hero';
+      }
+      
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once to set initial state
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Smooth scroll handler
+  const handleSmoothScroll = (e, href) => {
+    e.preventDefault();
+    
+    const targetId = href.substring(1); // Remove '#'
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
+      
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Close mobile menu if open
+    setIsOpen(false);
+  };
+
+  // Check if a nav item is active
+  const isActive = (href) => {
+    const sectionId = href.substring(1);
+    return activeSection === sectionId;
+  };
 
   return (
     <nav 
@@ -37,6 +91,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <a 
             href="#hero" 
+            onClick={(e) => handleSmoothScroll(e, '#hero')}
             className="text-xl font-bold text-gray-800 dark:text-white transition-colors duration-300"
           >
             <img src={LogoImage} alt="Logo" className="w-14 h-14 inline-block mr-2" />
@@ -47,9 +102,17 @@ const Navbar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300"
+                onClick={(e) => handleSmoothScroll(e, item.href)}
+                className={`transition-all duration-300 relative ${
+                  isActive(item.href)
+                    ? 'text-blue-500 dark:text-blue-400 font-medium'
+                    : 'text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400'
+                }`}
               >
                 {item.name}
+                {isActive(item.href) && (
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500 dark:bg-blue-400 rounded-full transition-all duration-300"></span>
+                )}
               </a>
             ))}
             
@@ -104,9 +167,16 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              className="block py-2 text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400 transition-colors duration-300"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleSmoothScroll(e, item.href)}
+              className={`block py-2 transition-all duration-300 relative ${
+                isActive(item.href)
+                  ? 'text-blue-500 dark:text-blue-400 font-medium pl-4'
+                  : 'text-gray-600 hover:text-blue-500 dark:text-gray-300 dark:hover:text-blue-400'
+              }`}
             >
+              {isActive(item.href) && (
+                <span className="absolute left-0 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-blue-500 dark:bg-blue-400 rounded-full"></span>
+              )}
               {item.name}
             </a>
           ))}
