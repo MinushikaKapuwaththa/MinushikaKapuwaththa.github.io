@@ -3,21 +3,19 @@ import { CheckCircle } from 'lucide-react';
 
 const skills = [
   // Testing Skills
-  { name: 'Manual Testing', level: 5, category: 'Testing' },
-  { name: 'Test Planning', level: 5, category: 'Testing' },
-  { name: 'Test Case Design', level: 5, category: 'Testing' },
-  { name: 'Regression Testing', level: 4, category: 'Testing' },
+  { name: 'Manual Testing', level: 3, category: 'Testing' },
+  { name: 'Test Planning', level: 2, category: 'Testing' },
+  { name: 'Test Case Design', level: 3, category: 'Testing' },
   { name: 'API Testing', level: 4, category: 'Testing' },
   
   // Automation Skills
-  { name: 'Selenium', level: 4, category: 'Automation' },
-  { name: 'Cypress', level: 4, category: 'Automation' },
+  { name: 'Selenium', level: 3, category: 'Automation' },
+  { name: 'Cucumber', level: 2, category: 'Automation' },
   { name: 'TestNG', level: 3, category: 'Automation' },
-  { name: 'Cucumber', level: 3, category: 'Automation' },
   { name: 'JUnit', level: 3, category: 'Automation' },
   
   // Tools
-  { name: 'JIRA', level: 5, category: 'Tools' },
+  { name: 'JMeter', level: 3, category: 'Tools' },
   { name: 'Postman', level: 4, category: 'Tools' },
   { name: 'Jenkins', level: 3, category: 'Tools' },
   { name: 'Git', level: 4, category: 'Tools' },
@@ -82,7 +80,7 @@ const Skills = () => {
           <SkillSection title="Tools & Platforms" category="Tools"  />
           <SkillSection title="Programming Languages" category="Programming"  />
           
-          <div className="mt-10 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+          {/* <div className="mt-10 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
             <div className="flex items-start">
               <CheckCircle className="h-5 w-5 text-blue-500 mt-0.5 mr-2 flex-shrink-0" />
               <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -90,7 +88,7 @@ const Skills = () => {
                 and mobile application testing across Android and iOS platforms.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

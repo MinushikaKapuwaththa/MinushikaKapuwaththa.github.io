@@ -1,54 +1,54 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github } from 'lucide-react';
+import { Dashboard, OrangeHRM, Portal, PortfolioImage, Swag, Weather } from '../../assets';
 
 const projects = [
   {
-    title: 'E-commerce Testing Framework',
-    description: 'A comprehensive automated testing framework for e-commerce platforms using Selenium and Java. Includes test cases for product browsing, cart functionality, checkout process, and user account management.',
-    technologies: ['Selenium', 'Java', 'TestNG', 'Maven', 'Jenkins'],
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'OrangeHRM UI Testing',
+    description: 'Automated UI testing of the OrangeHRM platform, focusing on critical functionalities such as employee management, admin operations, and login workflows to ensure reliable performance and user experience.',
+    technologies: ['Cucumber', 'Serenity BDD', 'Jenkins'],
+    image: OrangeHRM,
     category: 'automation',
-    github: 'https://github.com/username/ecommerce-testing',
+    github: 'https://github.com/MinushikaKapuwaththa/OrangeHRM-Web-Testing',
   },
   {
-    title: 'API Testing Suite',
-    description: 'An extensive collection of API tests using Postman and Newman. Validates REST endpoints for a financial services application, including data validation, error handling, and security testing.',
-    technologies: ['Postman', 'Newman', 'JavaScript', 'Jenkins', 'CI/CD'],
-    image: 'https://images.pexels.com/photos/2088170/pexels-photo-2088170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    title: 'Swag Labs E-Commerce UI Testing',
+    description: 'Performed end-to-end automated UI testing on the Swag Labs e-commerce website, validating key user interactions, cart functionality, and product flows to ensure a seamless shopping experience.',
+    technologies: ['Selenium',  'CI/CD'],
+    image: Swag,
     category: 'automation',
-    github: 'https://github.com/username/api-testing-suite',
-    demo: 'https://example.com/demo'
+    github: 'https://github.com/MinushikaKapuwaththa/Swag-Labs-Web-Testing'
   },
   {
-    title: 'Mobile App Test Plan',
-    description: 'Comprehensive test documentation for a healthcare mobile application. Includes test strategy, test cases, and defect reporting templates that helped ensure the application met HIPAA compliance requirements.',
-    technologies: ['iOS', 'Android', 'Appium', 'JIRA', 'Test Documentation'],
-    image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    category: 'manual',
+    title: 'Project Management System',
+    description: 'Led the development of a project management system for academic purposes. Implemented core project tracking features, task management, and ensured the application was responsive and user-centric.',
+    technologies: ['React', 'ASP.NET Core', ' MS SQL',],
+    image: Dashboard,
+    category: 'Web Development',
+    github: 'https://github.com/MinushikaKapuwaththa/project-management-system-frontend',
   },
   {
-    title: 'Test Automation Dashboard',
-    description: 'A customized dashboard built to visualize test results and metrics from multiple testing tools. Provides insights into test coverage, success rates, and identifies testing bottlenecks.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Chart.js', 'CI/CD Integration'],
-    image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    category: 'tools',
-    github: 'https://github.com/username/test-dashboard',
-    demo: 'https://example.com/dashboard-demo'
+    title: 'Management Portal',
+    description: 'Developed a web-based management portal that provides real-time operational insights and metrics for managers. Integrated dashboards and reporting modules using Jasper Reports to enhance decision-making. Woreked on during my internship.',
+    technologies: ['Spring MVC', 'Jasper Reports', 'Java', 'Oracle' , 'ChartJS'],
+    image: Portal,
+    category: 'Web Development',
   },
   {
-    title: 'Security Testing Protocol',
-    description: 'Developed a comprehensive security testing protocol for web applications. Includes penetration testing procedures, vulnerability assessments, and compliance checklists.',
-    technologies: ['OWASP ZAP', 'Burp Suite', 'Nmap', 'Security Documentation'],
-    image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    category: 'manual',
+    title: 'Personal Portfolio Website',
+    description: 'Designed and developed a responsive personal portfolio website to showcase skills, achievements, and projects. Implemented an interactive, user-friendly interface for optimal viewing across all devices.',
+    technologies: ['React', 'CI/CD Integration'],
+    image: PortfolioImage,
+    category: 'Web Development',
+    github: "https://github.com/MinushikaKapuwaththa/MinushikaKapuwaththa.github.io"
   },
   {
-    title: 'Continuous Testing Pipeline',
-    description: 'Designed and implemented a continuous testing pipeline that integrates with the development workflow. Enables automatic test execution at various stages of the software development lifecycle.',
-    technologies: ['Jenkins', 'Docker', 'Selenium Grid', 'GitLab CI', 'Reporting Tools'],
-    image: 'https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    category: 'tools',
-    github: 'https://github.com/username/ci-testing-pipeline',
+    title: 'Weather App',
+    description: 'Built a weather forecasting application that retrieves and displays real-time weather data such as temperature, humidity, wind speed, and conditions for any selected city using the OpenWeatherMap API.',
+    technologies: ['React', 'OpenWeatherMap API',],
+    image: Weather,
+    category: 'Web Development',
+    github: 'https://github.com/MinushikaKapuwaththa/real-weather',
   },
 ];
 
@@ -161,17 +161,17 @@ const Projects = () => {
           </button>
           
           <button
-            onClick={() => setActiveFilter('manual')}
+            onClick={() => setActiveFilter('Web Development')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300
-              ${activeFilter === 'manual'
+              ${activeFilter === 'Web Development'
                 ? 'bg-blue-500 text-white'
                 : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'
               }`}
           >
-            Manual Testing
+            Web Development
           </button>
           
-          <button
+          {/* <button
             onClick={() => setActiveFilter('tools')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300
               ${activeFilter === 'tools'
@@ -180,7 +180,7 @@ const Projects = () => {
               }`}
           >
             Tools & Infrastructure
-          </button>
+          </button> */}
         </div>
         
         {/* Projects Grid */}
